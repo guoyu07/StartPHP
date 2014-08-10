@@ -1,0 +1,7 @@
+<script type="text/javascript" src="<?php echo __START_EXTEND__;?>/Org/Ueditor/ueditor.all.js"></script>
+<script type="text/javascript" src="<?php echo __START_EXTEND__;?>/Org/Ueditor/ueditor.config.js"></script>
+<textarea name="" id="myEditor" style="width:99%;height:400px"></textarea>
+<script type="text/javascript">
+	var editor = new UE.ui.Editor();
+	editor.render("myEditor");
+</script>

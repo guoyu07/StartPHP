@@ -1,0 +1,8 @@
+<?php
+//此文件是系统自动生成，仅作为测试用途
+class IndexControl extends Control{
+	
+	public function index(){
+		echo '<div style="margin:30px 0 0 50px;font-family: 微软雅黑;"><span style="font-size:150px;color:#390;">:&nbsp;)</span><br/><h1 style="font-family: 微软雅黑;">欢迎使用StartPHP框架</h1></div>';
+	}	
+}

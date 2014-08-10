@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="<?php echo __START_EXTEND__?>/Org/Uploadify/uploadify.css">
+<script type="text/javascript" src="<?php echo __START_EXTEND__?>/Org/Uploadify/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+    	$("#file_upload").uploadify({
+   		 buttonText : '上传图片',
+	       buttonImage : '<?php echo __START_EXTEND__?>/Org/Uploadify/buttom2.png',
+           			swf : '<?php echo __START_EXTEND__?>/Org/Uploadify/uploadify.swf',
+        	 uploader : '<?php echo __WEB__.'/';$group=IS_GROUP?GROUP:'';echo $group.'/'.CONTROL.'/'.ACTION;?>/upload/uploadify',
+   		fileSizeLimit : 2000,
+  	queueSizeLimit : 10,  
+	              	 width : 98,
+	                height : 28,
+        	fileSizeLimit : 2000,
+        	queueSizeLimit : 10,				
+       	 	onUploadSuccess : function(file, data, response) {
+				var data = eval("("+data+")");
+				if(data.state === true){
+					upSuccess(data.path,file.name);	
+				}
+        	},
+        	onUploadError:function(file, errorCode, errorMsg, errorString){
+        		alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+        	} 		
+    	})
+	})
+	var index=0;
+	 function upSuccess(path,name) {
+		 alert(path);
+          var node = $('#file_upload-queue .uploadify-queue-item');
+          nodes = [];
+          node.each(function(){
+          	nodes.push(this);
+          });
+          var oBox = document.getElementById('box');
+          var oDiv = document.createElement('div');
+          oDiv.className = 'list';          
+          oDiv.innerHTML = '<img src="<?php echo __ROOT__?>'+path+'" style="display:block;float:left;width:150px;height:200px;"><input type="hidden" name="file" value="'+path+'">';
+          oDiv.appendChild(nodes[index]);
+          oBox.appendChild(oDiv);
+          index++;
+     }
+</script>
+<div style='height:30px;width:550px;position:relative;'>
+	<input type="file" name="file_upload" id="file_upload" />
+  <div id="box"></div>
+</div>

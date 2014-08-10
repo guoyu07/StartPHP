@@ -1,0 +1,2 @@
+<link rel="stylesheet" href="<?php echo __START_EXTEND__;?>/Org/Bootstrap/Bootstrap3/Css/Bootstrap.min.css" />
+<script type="text/javascript" src="<?php echo __START_EXTEND__;?>/Org/Bootstrap/Bootstrap3/Js/Bootstrap.min.js"></script>

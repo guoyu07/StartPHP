@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+#debug{width:98.5%;border:1px solid #ccc;background:#fff;padding:10px;box-shadow:0 0 5px #999;display:<?php echo $display;?>;position:fixed;bottom:5px;left:50%;margin-left:-50%;z-index:9999}
+p{width:99%;background:#999;color:#fff;margin:20px auto 0;padding:3px 0 3px 10px;font-size:12px;}
+fieldset {font-size:14px;padding:10px;margin:10px 0;background:#efefef;}
+lengend {padding:10px;}
+#close {position:absolute;right:0;top:0;width:30px;height:20px;cursor:pointer;}
+#show {font-size:18px;font-weight:800;color:#fff;position:fixed;right:20px;bottom:10px;display:block;width:80px;height:30px;line-height:30px;background:#999;text-align:center;cursor:pointer;}
+</style>
+</head>
+<body>
+<div id="debug">
+	<img src="<?php echo __START_DATA__?>/Image/close.png"  id="close"/>
+	<h2>DEBUG</h2>
+	<?php if(isset($e['msg'])):?>
+	<fieldset>
+		<legend>ERROR</legend>
+		<?php echo $e['msg']?>
+	</fieldset>
+	<?php endif;?>
+	<?php if(isset($e['info'])):?>
+	<fieldset>
+		<legend>TRACE</legend>
+		<?php echo $e['info']?>
+	</fieldset>
+	<?php endif;?>
+</div>
+<span id="show">DEBUG</span>
+<script type="text/javascript">
+	var show=document.getElementById('show');
+	var debug=document.getElementById('debug');
+	var close=document.getElementById('close');
+	var off=-1;
+	show.onclick=function(){
+		off=off*-1
+		if(off==1){
+			debug.style.display='block';
+		}else{
+			debug.style.display='none';
+		}
+	}
+	close.onclick=function(){
+		debug.style.display='none';
+	}
+		
+</script>
+</body>
+</html>

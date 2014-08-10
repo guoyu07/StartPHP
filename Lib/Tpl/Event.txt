@@ -1,0 +1,7 @@
+<?php
+if (!defined("StartPHP_PATH"))exit();
+//事件定义
+return array(
+		
+);
+?>

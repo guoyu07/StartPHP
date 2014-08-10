@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="<?php echo __START_EXTEND__?>/Org/Uploadify/uploadify.css">
+<script type="text/javascript" src="<?php echo __START_EXTEND__?>/Org/Uploadify/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript">
+var START_EXTEND_PATH='<?php echo __START_EXTEND__?>';
+var REQUEST_URL='<?php echo __WEB__.'/';$group=IS_GROUP?GROUP:'';echo $group.'/'.CONTROL.'/'.ACTION;?>/upload/uploadify';
+var ROOT_PATH='<?php echo __ROOT__;?>';
+var fileSize=2097152;
+var upLimit=10;
+var fileTitle='';
+var inputName='file';
+</script>
+<script type="text/javascript" src="<?php echo __START_EXTEND__?>/Org/Uploadify/startuploadify.js"></script>
+<div style='height:30px;width:100%;position:relative;'>
+	<input type="file" name="file_upload" id="file_upload" />
+  <div id="box"></div>
+</div>

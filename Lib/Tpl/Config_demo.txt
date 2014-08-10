@@ -1,0 +1,7 @@
+<?php
+defined("START_PATH")||exit();
+//更多配置请查看Start/Config/config.php
+return array(
+		//'配置'=>'值',
+);
+?>
